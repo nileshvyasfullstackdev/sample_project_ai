@@ -11,7 +11,8 @@ export default function Home() {
           // Fetch products from backend API
           const fetchProducts = async () => {
                try {
-                    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/products`);
+                    const apiBase = process.env.NEXT_PUBLIC_API_URL || '';
+                    const response = await fetch(`${apiBase}/api/products`);
                     const data = await response.json();
                     setProducts(data);
                } catch (error) {

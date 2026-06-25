@@ -2,9 +2,10 @@
 
 import { Container, Table, Button } from 'react-bootstrap';
 import PageBanner from '../../components/PageBanner';
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
 import { useCart } from '@/context/CartContext';
 import Link from 'next/link';
+
+const API_URL = process.env.NEXT_PUBLIC_API_URL || '';
 
 export default function Cart() {
      const { cartItems, removeFromCart, updateQuantity, getTotalPrice } = useCart();
@@ -96,7 +97,8 @@ export default function Cart() {
                                         <h3 className="mb-3">Total: ${total.toFixed(2)}</h3>
                                         <Button variant="primary" size="lg" className="me-2" onClick={async () => {
                                              try {
-                                                  const res = await fetch(`${API_URL}/api/checkout/create-session`, {
+                                                  const apiBase = API_URL || '';
+                                                  const res = await fetch(`${apiBase}/api/checkout/create-session`, {
                                                        method: 'POST',
                                                        headers: { 'Content-Type': 'application/json' },
                                                        body: JSON.stringify({ items: cartItems })
