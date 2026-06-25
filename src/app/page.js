@@ -2,7 +2,6 @@
 
 import HeroSection from '../components/HeroSection';
 import ProductCard from '../components/ProductCard';
-import styles from '../styles/home.scss';
 import { useEffect, useState } from 'react';
 
 export default function Home() {
@@ -28,7 +27,7 @@ export default function Home() {
      return (
           <>
                <HeroSection />
-               <section className={styles['products-section']}>
+               <section className="products-section">
                     <div className="container">
                          <h2>Featured Products</h2>
                          <div className="grid grid-3">

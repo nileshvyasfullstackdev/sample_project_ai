@@ -2,11 +2,10 @@
 
 import Link from 'next/link';
 import { Container, Row, Col } from 'react-bootstrap';
-import styles from '../styles/footer.scss';
 
 export default function Footer() {
      return (
-          <footer className={styles.footer}>
+          <footer>
                <Container>
                     <Row className="gy-4">
                          <Col md={4}>
@@ -54,7 +53,7 @@ export default function Footer() {
                               <p>Hours: 9AM - 9PM EST</p>
                          </Col>
                     </Row>
-                    <div className={styles['footer-bottom']}>
+                    <div className="text-center mt-4">
                          <p>&copy; 2024 EcomStore. All rights reserved.</p>
                     </div>
                </Container>

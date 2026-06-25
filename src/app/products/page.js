@@ -45,14 +45,15 @@ const mockProducts = [
 export default function Products() {
      return (
           <>
-               <div className="bg-primary text-white py-5">
+               <div className="page-header">
                     <Container>
-                         <h1 className="mb-3">All Products</h1>
-                         <p className="lead">Browse our complete collection of premium products</p>
+                         <h1>All Products</h1>
+                         <p>Browse our complete collection of premium products</p>
                     </Container>
                </div>
-               <Container className="py-5">
-                    <Row xs={1} sm={2} lg={3} className="g-4">
+               <div className="page-content py-5">
+                    <Container>
+                         <Row xs={1} sm={2} lg={3} className="g-4">
                          {mockProducts.map((product) => (
                               <Col key={product.id}>
                                    <ProductCard product={product} />
@@ -60,6 +61,7 @@ export default function Products() {
                          ))}
                     </Row>
                </Container>
+               </div>
           </>
      );
 }

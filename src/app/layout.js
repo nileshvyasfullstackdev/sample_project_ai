@@ -1,6 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.css';
-import '@/styles/globals.scss';
-import '@/styles/pages.scss';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ToastProvider from '@/components/ToastProvider';

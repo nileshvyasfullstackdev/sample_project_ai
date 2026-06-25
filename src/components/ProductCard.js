@@ -1,9 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 import { Card, Button } from 'react-bootstrap';
-import styles from '@/styles/home.scss';
 import { useCart } from '@/context/CartContext';
 import { toast } from 'react-toastify';
 
@@ -28,30 +26,29 @@ export default function ProductCard({ product }) {
      };
 
      return (
-          <Card className={styles['product-card']}>
-               <div className={styles['product-image-wrapper']}>
+          <Card>
+               <div>
                     <Card.Img
                          variant="top"
                          src={product.image || 'https://picsum.photos/200'}
                          alt={product.name}
-                         className={styles['product-image']}
                     />
                </div>
-               <Card.Body className={styles['product-info']}>
+               <Card.Body>
                     <Card.Title>{product.name}</Card.Title>
-                    <div className={styles.rating}>⭐ {product.rating || 4.5} (Reviews: {product.reviews || 0})</div>
-                    <div className={styles.price}>${product.price}</div>
+                    <div>⭐ {product.rating || 4.5} (Reviews: {product.reviews || 0})</div>
+                    <div>${product.price}</div>
                     <Card.Text>{product.description}</Card.Text>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
                          <Button variant="outline-secondary" size="sm" onClick={decrementQuantity}>
                               -
                          </Button>
-                         <input style={{ textAlign: 'center' }}
+                         <input
                               type="number"
                               min="1"
                               value={quantity}
                               onChange={handleQuantityInput}
-                              className={styles['quantity-select']}
+                              style={{ width: '70px', padding: '0.5rem', textAlign: 'center', borderRadius: '0.5rem', border: '1px solid #d1d5db' }}
                          />
                          <Button variant="outline-secondary" size="sm" onClick={incrementQuantity}>
                               +

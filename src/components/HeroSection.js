@@ -2,15 +2,14 @@
 
 import Link from 'next/link';
 import { Button } from 'react-bootstrap';
-import styles from '../styles/home.scss';
 
 export default function HeroSection() {
      return (
-          <section className={styles.hero}>
+          <section className="hero">
                <div className="container">
                     <h1>Welcome to EcomStore</h1>
                     <p>Discover amazing products at unbeatable prices. Shop now and enjoy fast delivery!</p>
-                    <div className={styles['cta-buttons']}>
+                    <div className="cta-buttons">
                          <Button href="/products" className="btn-primary btn-lg">
                               Shop Now
                          </Button>

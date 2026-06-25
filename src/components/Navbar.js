@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { Navbar, Container, Nav, Badge } from 'react-bootstrap';
-import styles from '@/styles/navbar.scss';
 import { useCart } from '@/context/CartContext';
 
 export default function NavbarComponent() {
@@ -10,7 +9,7 @@ export default function NavbarComponent() {
      const cartItemsCount = getTotalItems();
 
      return (
-          <Navbar bg="light" expand="lg" sticky="top" className="navbar-custom shadow-sm">
+          <Navbar bg="light" expand="lg" sticky="top" className="shadow-sm">
                <Container>
                     <Navbar.Brand as={Link} href="/" className="fw-bold fs-5">
                          🛍️ EcomStore
