@@ -1,6 +1,9 @@
 const express = require('express');
 const cors = require('cors');
-require('dotenv').config();
+const path = require('path');
+
+// Load .env from backend directory explicitly so running from project root still works
+require('dotenv').config({ path: path.join(__dirname, '.env') });
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -61,6 +64,7 @@ app.use('/api/products', require('./routes/products'));
 app.use('/api/cart', require('./routes/cart'));
 app.use('/api/orders', require('./routes/orders'));
 app.use('/api/contact', require('./routes/contact'));
+app.use('/api/checkout', require('./routes/checkout'));
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
@@ -84,4 +88,6 @@ app.use((err, req, res, next) => {
 app.listen(PORT, () => {
      console.log(`🚀 Server running on http://localhost:${PORT}`);
      console.log(`📦 API available at http://localhost:${PORT}/api`);
+     const stripeConfigured = !!process.env.STRIPE_SECRET_KEY;
+     console.log(`🔐 Stripe configured: ${stripeConfigured}`);
 });

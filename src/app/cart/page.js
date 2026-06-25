@@ -2,6 +2,7 @@
 
 import { Container, Table, Button } from 'react-bootstrap';
 import PageBanner from '../../components/PageBanner';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
 import { useCart } from '@/context/CartContext';
 import Link from 'next/link';
 
@@ -93,7 +94,24 @@ export default function Cart() {
                                    </Table>
                                    <div className="text-end mt-4">
                                         <h3 className="mb-3">Total: ${total.toFixed(2)}</h3>
-                                        <Button variant="primary" size="lg" className="me-2">
+                                        <Button variant="primary" size="lg" className="me-2" onClick={async () => {
+                                             try {
+                                                  const res = await fetch(`${API_URL}/api/checkout/create-session`, {
+                                                       method: 'POST',
+                                                       headers: { 'Content-Type': 'application/json' },
+                                                       body: JSON.stringify({ items: cartItems })
+                                                  });
+                                                  const data = await res.json();
+                                                  if (data.url) {
+                                                       window.location.href = data.url;
+                                                  } else {
+                                                       alert(data.error || 'Unable to start checkout');
+                                                  }
+                                             } catch (err) {
+                                                  console.error('Checkout error', err);
+                                                  alert('Checkout failed. See console for details.');
+                                             }
+                                        }}>
                                              Checkout
                                         </Button>
                                         <Link href="/products">
