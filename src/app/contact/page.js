@@ -119,13 +119,13 @@ export default function Contact() {
 
      return (
           <>
-               <div className="page-header">
+               <div className="bg-light rounded-3 p-4 mb-4">
                     <Container>
                          <h1>Contact Us</h1>
-                         <p>We&apos;d love to hear from you</p>
+                         <p className="text-muted mb-0">We&apos;d love to hear from you</p>
                     </Container>
                </div>
-               <div className="page-content py-5">
+               <div className="py-5">
                     <div className="row">
                          <div className="col-lg-6 mx-auto">
                               <Form onSubmit={handleSubmit}>

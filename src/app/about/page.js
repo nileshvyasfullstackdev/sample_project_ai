@@ -5,13 +5,13 @@ import { Container, Row, Col, Card } from 'react-bootstrap';
 export default function About() {
      return (
           <>
-               <div className="page-header">
+               <div className="bg-light rounded-3 p-4 mb-4">
                     <Container>
                          <h1>About EcomStore</h1>
-                         <p>Your trusted online shopping destination</p>
+                         <p className="text-muted mb-0">Your trusted online shopping destination</p>
                     </Container>
                </div>
-               <div className="page-content py-5">
+               <div className="py-5">
                     <Row className="mb-5">
                          <Col lg={8}>
                               <h2 className="mb-3">Our Story</h2>

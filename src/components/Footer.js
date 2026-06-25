@@ -5,56 +5,56 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 export default function Footer() {
      return (
-          <footer>
+          <footer className="bg-dark text-light pt-5 pb-4">
                <Container>
                     <Row className="gy-4">
                          <Col md={4}>
                               <h3>About Us</h3>
-                              <p>Your one-stop shop for quality products at great prices.</p>
+                              <p className="text-muted">Your one-stop shop for quality products at great prices.</p>
                          </Col>
                          <Col md={2}>
                               <h3>Quick Links</h3>
                               <ul className="list-unstyled">
-                                   <li>
-                                        <Link href="/">Home</Link>
+                                   <li className="mb-2">
+                                        <Link href="/" className="text-muted text-decoration-none">Home</Link>
                                    </li>
-                                   <li>
-                                        <Link href="/products">Products</Link>
+                                   <li className="mb-2">
+                                        <Link href="/products" className="text-muted text-decoration-none">Products</Link>
                                    </li>
-                                   <li>
-                                        <Link href="/about">About</Link>
+                                   <li className="mb-2">
+                                        <Link href="/about" className="text-muted text-decoration-none">About</Link>
                                    </li>
-                                   <li>
-                                        <Link href="/contact">Contact</Link>
+                                   <li className="mb-2">
+                                        <Link href="/contact" className="text-muted text-decoration-none">Contact</Link>
                                    </li>
                               </ul>
                          </Col>
                          <Col md={3}>
                               <h3>Customer Service</h3>
                               <ul className="list-unstyled">
-                                   <li>
-                                        <Link href="#">Shipping Info</Link>
+                                   <li className="mb-2">
+                                        <Link href="#" className="text-muted text-decoration-none">Shipping Info</Link>
                                    </li>
-                                   <li>
-                                        <Link href="#">Returns</Link>
+                                   <li className="mb-2">
+                                        <Link href="#" className="text-muted text-decoration-none">Returns</Link>
                                    </li>
-                                   <li>
-                                        <Link href="#">FAQ</Link>
+                                   <li className="mb-2">
+                                        <Link href="#" className="text-muted text-decoration-none">FAQ</Link>
                                    </li>
-                                   <li>
-                                        <Link href="#">Support</Link>
+                                   <li className="mb-2">
+                                        <Link href="#" className="text-muted text-decoration-none">Support</Link>
                                    </li>
                               </ul>
                          </Col>
                          <Col md={3}>
                               <h3>Contact Info</h3>
-                              <p>Email: info@ecomstore.com</p>
-                              <p>Phone: 1-800-ECOM-STORE</p>
-                              <p>Hours: 9AM - 9PM EST</p>
+                              <p className="text-muted mb-1">Email: info@ecomstore.com</p>
+                              <p className="text-muted mb-1">Phone: 1-800-ECOM-STORE</p>
+                              <p className="text-muted mb-0">Hours: 9AM - 9PM EST</p>
                          </Col>
                     </Row>
                     <div className="text-center mt-4">
-                         <p>&copy; 2024 EcomStore. All rights reserved.</p>
+                         <p className="text-muted mb-0">&copy; 2024 EcomStore. All rights reserved.</p>
                     </div>
                </Container>
           </footer>

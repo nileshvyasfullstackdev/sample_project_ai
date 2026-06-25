@@ -29,13 +29,13 @@ export default function Cart() {
 
      return (
           <>
-               <div className="page-header">
+               <div className="bg-light rounded-3 p-4 mb-4">
                     <Container>
                          <h1>Shopping Cart</h1>
-                         <p>Review and checkout your items</p>
+                         <p className="text-muted mb-0">Review and checkout your items</p>
                     </Container>
                </div>
-               <div className="page-content py-5">
+               <div className="py-5">
                     {cartItems.length > 0 ? (
                          <>
                               <Table striped bordered hover responsive>

@@ -27,17 +27,21 @@ export default function Home() {
      return (
           <>
                <HeroSection />
-               <section className="products-section">
+               <section>
                     <div className="container">
                          <h2>Featured Products</h2>
-                         <div className="grid grid-3">
+                         <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 mt-3">
                               {products.length > 0 ? (
                                    products.map((product) => (
-                                        <ProductCard key={product.id} product={product} />
+                                        <div key={product.id} className="col">
+                                             <ProductCard product={product} />
+                                        </div>
                                    ))
                               ) : (
                                    mockProducts.map((product) => (
-                                        <ProductCard key={product.id} product={product} />
+                                        <div key={product.id} className="col">
+                                             <ProductCard product={product} />
+                                        </div>
                                    ))
                               )}
                          </div>

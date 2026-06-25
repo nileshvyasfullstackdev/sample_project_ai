@@ -1,0 +1,19 @@
+/* Global Bootstrap-based stylesheet */
+
+html, body, #__next {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #f8f9fa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

@@ -16,20 +16,20 @@ export default function NavbarComponent() {
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                         <Nav className="ms-auto">
-                              <Nav.Link as={Link} href="/" className="me-3">
+                         <Nav className="ms-auto align-items-lg-center">
+                              <Nav.Link as={Link} href="/" className="pe-lg-3">
                                    Home
                               </Nav.Link>
-                              <Nav.Link as={Link} href="/products" className="me-3">
+                              <Nav.Link as={Link} href="/products" className="pe-lg-3">
                                    Products
                               </Nav.Link>
-                              <Nav.Link as={Link} href="/about" className="me-3">
+                              <Nav.Link as={Link} href="/about" className="pe-lg-3">
                                    About
                               </Nav.Link>
-                              <Nav.Link as={Link} href="/contact" className="me-3">
+                              <Nav.Link as={Link} href="/contact" className="pe-lg-3">
                                    Contact
                               </Nav.Link>
-                              <Nav.Link as={Link} href="/cart" className="btn btn-primary text-white ms-2">
+                              <Nav.Link as={Link} href="/cart" className="btn btn-primary text-white ms-lg-3 mt-3 mt-lg-0 d-inline-flex align-items-center">
                                    🛒 Cart
                                    {cartItemsCount > 0 && (
                                         <Badge bg="danger" className="ms-2">

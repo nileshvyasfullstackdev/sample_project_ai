@@ -26,20 +26,20 @@ export default function ProductCard({ product }) {
      };
 
      return (
-          <Card>
-               <div>
-                    <Card.Img
-                         variant="top"
-                         src={product.image || 'https://picsum.photos/200'}
-                         alt={product.name}
-                    />
-               </div>
+          <Card className="h-100 shadow-sm">
+               <Card.Img
+                    variant="top"
+                    src={product.image || 'https://picsum.photos/200'}
+                    alt={product.name}
+               />
                <Card.Body>
                     <Card.Title>{product.name}</Card.Title>
-                    <div>⭐ {product.rating || 4.5} (Reviews: {product.reviews || 0})</div>
-                    <div>${product.price}</div>
+                    <div className="d-flex justify-content-between align-items-center mb-3 text-muted">
+                         <span>⭐ {product.rating || 4.5}</span>
+                         <span className="fw-bold text-dark">${product.price}</span>
+                    </div>
                     <Card.Text>{product.description}</Card.Text>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
+                    <div className="d-flex align-items-center gap-2 mb-3">
                          <Button variant="outline-secondary" size="sm" onClick={decrementQuantity}>
                               -
                          </Button>
@@ -48,7 +48,7 @@ export default function ProductCard({ product }) {
                               min="1"
                               value={quantity}
                               onChange={handleQuantityInput}
-                              style={{ width: '70px', padding: '0.5rem', textAlign: 'center', borderRadius: '0.5rem', border: '1px solid #d1d5db' }}
+                              className="form-control text-center w-25"
                          />
                          <Button variant="outline-secondary" size="sm" onClick={incrementQuantity}>
                               +
