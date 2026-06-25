@@ -1,6 +1,6 @@
 'use client';
 
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import PageBanner from '../../components/PageBanner';
 import ProductCard from '../../components/ProductCard';
 
@@ -49,13 +49,13 @@ export default function Products() {
                <PageBanner title="All Products" subtitle="Browse our complete collection of premium products" variant="primary" />
                <div className="py-5">
                     <Container>
-                         <Row xs={1} sm={2} lg={3} className="g-4">
+                         <div className="masonry-container">
                               {mockProducts.map((product) => (
-                                   <Col key={product.id}>
+                                   <div key={product.id} className="masonry-item">
                                         <ProductCard product={product} />
-                                   </Col>
+                                   </div>
                               ))}
-                         </Row>
+                         </div>
                     </Container>
                </div>
           </>

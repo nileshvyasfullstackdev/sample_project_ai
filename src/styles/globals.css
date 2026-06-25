@@ -53,3 +53,37 @@ img {
 .Toastify__close-button {
   color: rgba(255, 255, 255, 0.85);
 }
+
+.card {
+     border: 0;
+}
+
+/* Masonry Layout */
+.masonry-container {
+  column-count: 3;
+  column-gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+}
+
+/* Responsive masonry layout */
+@media (max-width: 1200px) {
+  .masonry-container {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .masonry-container {
+    column-count: 1;
+    column-gap: 0;
+  }
+  
+  .masonry-item {
+    margin-bottom: 1rem;
+  }
+}

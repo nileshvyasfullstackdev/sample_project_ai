@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import { Button } from 'react-bootstrap';
 
 export default function HeroSection() {
@@ -10,10 +9,10 @@ export default function HeroSection() {
                     <h1>Welcome to EcomStore</h1>
                     <p>Discover amazing products at unbeatable prices. Shop now and enjoy fast delivery!</p>
                     <div className="d-flex flex-column flex-sm-row gap-3 mt-4">
-                         <Button href="/products" variant="light" className="btn-lg">
+                         <Button href="/products" variant="light" className="btn-md">
                               Shop Now
                          </Button>
-                         <Button href="/about" variant="outline-light" className="btn-lg">
+                         <Button href="/about" variant="outline-light" className="btn-md">
                               Learn More
                          </Button>
                     </div>

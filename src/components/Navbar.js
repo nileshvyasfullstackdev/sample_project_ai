@@ -29,7 +29,7 @@ export default function NavbarComponent() {
                               <Nav.Link as={Link} href="/contact" className="pe-lg-3">
                                    Contact
                               </Nav.Link>
-                              <Nav.Link as={Link} href="/cart" className="btn btn-primary text-white ms-lg-3 mt-3 mt-lg-0 d-inline-flex align-items-center">
+                              <Nav.Link as={Link} href="/cart" className="ms-lg-3 mt-3 mt-lg-0 d-inline-flex align-items-center">
                                    🛒 Cart
                                    {cartItemsCount > 0 && (
                                         <Badge bg="danger" className="ms-2">

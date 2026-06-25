@@ -48,7 +48,7 @@ export default function ProductCard({ product }) {
                               min="1"
                               value={quantity}
                               onChange={handleQuantityInput}
-                              className="form-control text-center w-25"
+                              className="form-control text-center"
                          />
                          <Button variant="outline-secondary" size="sm" onClick={incrementQuantity}>
                               +

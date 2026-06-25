@@ -30,16 +30,16 @@ export default function Home() {
                <section className="py-5">
                     <div className="container">
                          <h2>Featured Products</h2>
-                         <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 mt-3">
+                         <div className="masonry-container">
                               {products.length > 0 ? (
                                    products.map((product) => (
-                                        <div key={product.id} className="col">
+                                        <div key={product.id} className="masonry-item">
                                              <ProductCard product={product} />
                                         </div>
                                    ))
                               ) : (
                                    mockProducts.map((product) => (
-                                        <div key={product.id} className="col">
+                                        <div key={product.id} className="masonry-item">
                                              <ProductCard product={product} />
                                         </div>
                                    ))
