@@ -1,6 +1,7 @@
 'use client';
 
 import { Container, Form, Button, Spinner } from 'react-bootstrap';
+import PageBanner from '../../components/PageBanner';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 
@@ -119,15 +120,11 @@ export default function Contact() {
 
      return (
           <>
-               <div className="bg-light rounded-3 p-4 mb-4">
-                    <Container>
-                         <h1>Contact Us</h1>
-                         <p className="text-muted mb-0">We&apos;d love to hear from you</p>
-                    </Container>
-               </div>
+               <PageBanner title="Contact Us" subtitle="We'd love to hear from you" variant="primary" />
                <div className="py-5">
-                    <div className="row">
-                         <div className="col-lg-6 mx-auto">
+                    <Container>
+                         <div className="row">
+                              <div className="col-lg-6 mx-auto">
                               <Form onSubmit={handleSubmit}>
                                    <Form.Group className="mb-3">
                                         <Form.Label>Name</Form.Label>
@@ -235,6 +232,7 @@ export default function Contact() {
                               </div>
                          </div>
                     </div>
+                    </Container>
                </div>
           </>
      );

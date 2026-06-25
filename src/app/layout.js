@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
                          <ToastProvider />
                          <Wrapper>
                               <Navbar />
-                              <main className="container py-4">{children}</main>
+                              <main className="flex-grow-1 w-100">{children}</main>
                               <Footer />
                          </Wrapper>
                     </CartProvider>

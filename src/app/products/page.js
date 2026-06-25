@@ -1,6 +1,7 @@
 'use client';
 
 import { Container, Row, Col } from 'react-bootstrap';
+import PageBanner from '../../components/PageBanner';
 import ProductCard from '../../components/ProductCard';
 
 const mockProducts = [
@@ -45,12 +46,7 @@ const mockProducts = [
 export default function Products() {
      return (
           <>
-               <div className="bg-primary text-white py-5 mb-4 rounded-3">
-                    <Container>
-                         <h1>All Products</h1>
-                         <p>Browse our complete collection of premium products</p>
-                    </Container>
-               </div>
+               <PageBanner title="All Products" subtitle="Browse our complete collection of premium products" variant="primary" />
                <div className="py-5">
                     <Container>
                          <Row xs={1} sm={2} lg={3} className="g-4">

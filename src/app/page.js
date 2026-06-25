@@ -27,7 +27,7 @@ export default function Home() {
      return (
           <>
                <HeroSection />
-               <section>
+               <section className="py-5">
                     <div className="container">
                          <h2>Featured Products</h2>
                          <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 mt-3">
