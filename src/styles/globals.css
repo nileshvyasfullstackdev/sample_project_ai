@@ -17,3 +17,39 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+.Toastify__toast {
+  border-radius: 0.75rem;
+}
+
+.Toastify__toast--success {
+  background-color: var(--bs-success);
+  color: var(--bs-white);
+}
+
+.Toastify__toast--error {
+  background-color: var(--bs-danger);
+  color: var(--bs-white);
+}
+
+.Toastify__toast--info {
+  background-color: var(--bs-info);
+  color: var(--bs-dark);
+}
+
+.Toastify__toast--warning {
+  background-color: var(--bs-warning);
+  color: var(--bs-dark);
+}
+
+.Toastify__toast-body {
+  font-size: 0.95rem;
+}
+
+.Toastify__progress-bar {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.Toastify__close-button {
+  color: rgba(255, 255, 255, 0.85);
+}

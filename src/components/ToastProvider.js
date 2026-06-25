@@ -1,6 +1,7 @@
 'use client';
 
 import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function ToastProvider() {
      return (
@@ -14,6 +15,10 @@ export default function ToastProvider() {
                pauseOnFocusLoss
                draggable
                pauseOnHover
+               theme="colored"
+               toastClassName="toast border-0 rounded-3 shadow-sm"
+               bodyClassName="py-2 px-3"
+               progressClassName="toast-progress"
           />
      );
 }
