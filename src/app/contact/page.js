@@ -4,8 +4,7 @@ import { Container, Form, Button, Spinner } from 'react-bootstrap';
 import PageBanner from '../../components/PageBanner';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL || '';
+import { apiUrl } from '@/utils/api';
 
 export default function Contact() {
      const [formData, setFormData] = useState({
@@ -85,8 +84,7 @@ export default function Contact() {
           setLoading(true);
 
           try {
-               const response = await fetch(`${API_URL}/api/contact/submit`, {
-                    method: 'POST',
+                    const response = await fetch(apiUrl('/api/contact/submit'), {
                     headers: {
                          'Content-Type': 'application/json',
                     },

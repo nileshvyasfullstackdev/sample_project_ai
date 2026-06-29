@@ -3,6 +3,7 @@
 import HeroSection from '../components/HeroSection';
 import ProductCard from '../components/ProductCard';
 import { useEffect, useState } from 'react';
+import { apiUrl } from '@/utils/api';
 
 export default function Home() {
      const [products, setProducts] = useState([]);
@@ -11,8 +12,7 @@ export default function Home() {
           // Fetch products from backend API
           const fetchProducts = async () => {
                try {
-                    const apiBase = process.env.NEXT_PUBLIC_API_URL || '';
-                    const response = await fetch(`${apiBase}/api/products`);
+                    const response = await fetch(apiUrl('/api/products'));
                     const data = await response.json();
                     setProducts(data);
                } catch (error) {

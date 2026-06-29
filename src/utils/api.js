@@ -1,9 +1,36 @@
 // API utility functions for frontend
 export const API_URL = process.env.NEXT_PUBLIC_API_URL || '';
 
+export function normalizeApiUrl(url) {
+     const trimmed = (url || '').trim().replace(/\/+$/, '');
+     if (!trimmed) return '';
+
+     const knownApiPaths = [
+          '/api/checkout/create-session',
+          '/api/products',
+          '/api/cart/add',
+          '/api/cart/remove',
+          '/api/orders',
+          '/api/contact/submit',
+          '/api/checkout/config',
+     ];
+
+     const lowerTrimmed = trimmed.toLowerCase();
+     for (const path of knownApiPaths) {
+          if (lowerTrimmed.endsWith(path.toLowerCase())) {
+               return trimmed.slice(0, trimmed.length - path.length).replace(/\/+$/, '');
+          }
+     }
+
+     return trimmed;
+}
+
+const apiBase = normalizeApiUrl(API_URL);
+export const apiUrl = (path) => `${apiBase}${path.startsWith('/') ? path : `/${path}`}`;
+
 export const fetchProducts = async () => {
      try {
-          const response = await fetch(`${API_URL}/api/products`);
+          const response = await fetch(apiUrl('/api/products'));
           if (!response.ok) throw new Error('Failed to fetch products');
           return await response.json();
      } catch (error) {
@@ -14,7 +41,7 @@ export const fetchProducts = async () => {
 
 export const fetchProductById = async (id) => {
      try {
-          const response = await fetch(`${API_URL}/api/products/${id}`);
+          const response = await fetch(apiUrl(`/api/products/${id}`));
           if (!response.ok) throw new Error('Product not found');
           return await response.json();
      } catch (error) {
@@ -25,7 +52,7 @@ export const fetchProductById = async (id) => {
 
 export const addToCart = async (cartId, item) => {
      try {
-          const response = await fetch(`${API_URL}/api/cart/add`, {
+          const response = await fetch(apiUrl('/api/cart/add'), {
                method: 'POST',
                headers: { 'Content-Type': 'application/json' },
                body: JSON.stringify({ cartId, item }),
@@ -40,7 +67,7 @@ export const addToCart = async (cartId, item) => {
 
 export const removeFromCart = async (cartId, itemId) => {
      try {
-          const response = await fetch(`${API_URL}/api/cart/remove/${itemId}?cartId=${cartId}`, {
+          const response = await fetch(apiUrl(`/api/cart/remove/${itemId}?cartId=${cartId}`), {
                method: 'DELETE',
           });
           if (!response.ok) throw new Error('Failed to remove from cart');
@@ -53,7 +80,7 @@ export const removeFromCart = async (cartId, itemId) => {
 
 export const createOrder = async (orderData) => {
      try {
-          const response = await fetch(`${API_URL}/api/orders`, {
+          const response = await fetch(apiUrl('/api/orders'), {
                method: 'POST',
                headers: { 'Content-Type': 'application/json' },
                body: JSON.stringify(orderData),

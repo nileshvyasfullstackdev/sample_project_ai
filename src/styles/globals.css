@@ -18,6 +18,58 @@ img {
   height: auto;
 }
 
+:root {
+  --bs-primary: #06b6d4;
+  --bs-primary-rgb: 6, 182, 212;
+  --bs-primary-gradient: linear-gradient(135deg, #06b6d4 0%, #8b5cf6 100%);
+  --bs-primary-gradient-hover: linear-gradient(135deg, #0ea5e9 0%, #7c3aed 100%);
+}
+
+.bg-primary,
+.btn-primary,
+.btn-primary.dropdown-toggle::after {
+  background-image: var(--bs-primary-gradient) !important;
+  border-color: transparent !important;
+}
+
+.btn-primary,
+.bg-primary {
+  color: #ffffff !important;
+  transition: all 0.3s ease !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary:not(:disabled):not(.disabled).active {
+  background-image: var(--bs-primary-gradient-hover) !important;
+  border-color: transparent !important;
+}
+
+.btn-outline-primary {
+  color: #06b6d4 !important;
+  border-color: #06b6d4 !important;
+  background-color: transparent !important;
+  transition: all 0.3s ease !important;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:not(:disabled):not(.disabled).active {
+  color: #ffffff !important;
+  background-image: var(--bs-primary-gradient-hover) !important;
+  border-color: transparent !important;
+}
+
+.text-primary {
+  color: transparent !important;
+  background-image: var(--bs-primary-gradient) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  transition: all 0.3s ease !important;
+}
+
 .Toastify__toast {
   border-radius: 0.75rem;
 }

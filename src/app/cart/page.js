@@ -4,8 +4,9 @@ import { Container, Table, Button } from 'react-bootstrap';
 import PageBanner from '../../components/PageBanner';
 import { useCart } from '@/context/CartContext';
 import Link from 'next/link';
+import { normalizeApiUrl } from '@/utils/api';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || '';
+const API_URL = normalizeApiUrl(process.env.NEXT_PUBLIC_API_URL || '');
 
 export default function Cart() {
      const { cartItems, removeFromCart, updateQuantity, getTotalPrice } = useCart();
@@ -98,7 +99,8 @@ export default function Cart() {
                                         <Button variant="primary" size="lg" className="me-2" onClick={async () => {
                                              try {
                                                   const apiBase = API_URL || '';
-                                                  const res = await fetch(`${apiBase}/api/checkout/create-session`, {
+                                                  const url = apiBase ? `${apiBase}/api/checkout/create-session` : '/api/checkout/create-session';
+                                                  const res = await fetch(url, {
                                                        method: 'POST',
                                                        headers: { 'Content-Type': 'application/json' },
                                                        body: JSON.stringify({ items: cartItems })
